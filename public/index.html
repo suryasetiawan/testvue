@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>test</title>
+    <style>
+    nav {
+      display: inline-block;
+      margin: 60px auto 45 px;
+      background-color: #344279;
+      box-shadow: 0 1px 1px #ccc;
+      border-radius: 2px;
+
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 40px 30px;
+      color: #fff !important;
+      font-size: 18px;
+      text-decoration: none !important;
+      line-height: 1;
+      text-transform: uppercase;
+      background-color: transparent;
+      -webkit-transition: background-color 0.25s;
+      -moz-transition: background-color 0.25s;
+      transition: background-color 0.25s;
+    }
+
+    nav a:first-child {
+      border-radius: 2px 0 0 2px;
+    }
+
+    nav a:last-child {
+      border-radius: 0 2px 2px 0;
+    }
+
+    nav.home .home,
+    nav.alert1 .alert1,
+    nav.learn .learn,
+    nav.prospect .prospect {
+      background-color: #5d699a;
+      line-height: 40px;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="main">
+    <nav class="navbar navbar-expand-lg navbar-light " v-bind:class="active" v-on:click.prevent>
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="#">
+          <img style="margin-left:320px" src="https://my.intricately.com/assets/images/logo-pink.svg" width="60"
+            height="60" alt="">
+        </a>
+      </div>
+
+      <div class="col-12">
+        <form class="form-inline">
+          <input class="form-control" type="search" placeholder="Search Company" aria-label="Search">
+          <a>OR</a>
+
+          <a href="#" class="home" v-on:click="makeActive('home')">NEW SMARTLIST</a>
+          <a href="#" class="prospect" v-on:click="makeActive('prospect')">PROSPECT</a>
+          <a href="#" class="alert1" v-on:click="makeActive('alert1')">ALERT</a>
+          <a href="#" class="learn" v-on:click="makeActive('learn')">LEARN</a>
+        </form>
+      </div>
+    </nav>
+    <!-- <p style="margin-left:300px">Menu pilihan anda <b>{{active}}</b></p> -->
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+  <script>
+    var demo = new Vue({
+      el: '#main',
+      data: {
+        active: 'home'
+      },
+      methods: {
+        makeActive: function (item) {
+          this.active = item;
+        }
+      }
+    })
+  </script>
+    <noscript>
+      <strong>We're sorry but tutorial-vuex doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
