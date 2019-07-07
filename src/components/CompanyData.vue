@@ -1,4 +1,5 @@
 <template>
+
     <div class="col-md-4">
         <div class="card">
             <div class="card-header">
@@ -16,7 +17,6 @@
                 <div class="form-group">
                     <label for="">Notes</label>
                      <textarea v-model="perusahaan.notes" class="form-control" aria-label="With textarea"></textarea>
-
                 </div>
                 <div class="form-group">
                     <button class="btn btn-danger btn-lg"
@@ -26,7 +26,9 @@
             </div>
         </div>
     </div>
+    
 </template>
+
 <script>
     export default {
         name: 'CompanyData',
